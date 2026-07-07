@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walimatulurus Wan Imran Mahdi &amp; Aqilah Zulhairi</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config for Custom Theme Fonts & Colors -->
+   <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        cookie: ['"Cookie"', 'cursive'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        // Color Code 1: Deep Plum Accent (#804772)
+                        plum: {
+                            50: '#fbf7fa',
+                            100: '#f6eff4',
+                            200: '#eddfe9',
+                            300: '#dec4d7',
+                            400: '#c59ebe',
+                            500: '#804772', // Warna Utama Utama
+                            600: '#703e63',
+                            700: '#5d3252',
+                        },
+                        // Color Code 2: Background Sage/Mist Grey (#D2D3CD)
+                        mist: {
+                            50: '#f6f6f5',
+                            100: '#ececed',
+                            200: '#D2D3CD', // Warna Latar Utama
+                            300: '#bcbeba',
+                            400: '#a3a6a1',
+                            500: '#7f827d',
+                        },
+                        // Color Code 3: Muted Blossom Rose (#C986A5)
+                        blossom: {
+                            100: '#faf1f5',
+                            200: '#f4e2eb',
+                            300: '#e9cad9',
+                            400: '#d9a9c1',
+                            500: '#C986A5', // Warna Romantik Kedua
+                            600: '#b87394',
+                            700: '#9c5b7b',
+                        },
+                        gold: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Whimsical Floating Petals & Flowers Animation */
+        .petal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 25;
+            overflow: hidden;
+        }
+
+        .floating-flower {
+            position: absolute;
+            pointer-events: none;
+            animation: floatAndRotate 12s infinite linear;
+            opacity: 0;
+        }
+
+        @keyframes floatAndRotate {
+            0% {
+                transform: translateY(-10%) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.85;
+            }
+            90% {
+                opacity: 0.85;
+            }
+            100% {
+                transform: translateY(110vh) translateX(120px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Glassmorphism card effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Whimsical Swaying Animation for Left/Right Vines */
+        @keyframes swayLeft {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(4deg) scale(1.03); }
+        }
+        @keyframes swayRight {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(-4deg) scale(1.03); }
+        }
+        .sway-left-element {
+            animation: swayLeft 8s infinite ease-in-out;
+            transform-origin: left top;
+        }
+        .sway-right-element {
+            animation: swayRight 9s infinite ease-in-out;
+            transform-origin: right bottom;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f6f6f5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #804772;
+            border-radius: 10px;
+        }
+        
+        /* Music spinning animation */
+        .spinning {
+            animation: spin 4s linear infinite;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Envelope / Overlay transition */
+        .envelope-open {
+            transform: translateY(-100%);
+            transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .wish-card-animate {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        .style-scrollbar::-webkit-scrollbar {
+            width: 3px;
+        }
+        .style-scrollbar::-webkit-scrollbar-thumb {
+            background-color: rgba(128, 71, 114, 0.3);
+            border-radius: 10px;
+        }
+
+        /* ============================================
+           STANDARDIZED TYPE SCALE (2 fonts only)
+           Display: Playfair Display (headings)
+           Body:    Montserrat (body, labels, UI)
+           ============================================ */
+        .text-h1 {            /* Page hero name */
+            font-family: '"Cookie"', cursive; /* Ditukar ke fon berangkai */
+            font-size: 3.5rem;       /* Saiz dibesarkan sedikit kerana fon berangkai biasanya kelihatan kecil */
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        .text-nama-pengantin {   /* Kelas baru khas untuk kad profil/gambar supaya kekal berangkai */
+            font-family: '"Cookie"', cursive;
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+        .text-h2 {            /* Section titles */
+            font-family: '"Playfair Display"', serif;
+            font-size: 1.75rem;     /* 28px */
+            font-weight: 700;
+            line-height: 1.25;
+        }
+        .text-h3 {            /* Card / sub-section titles */
+            font-family: '"Playfair Display"', serif;
+            font-size: 1.25rem;     /* 20px */
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .text-eyebrow {       /* Small script-style label above section titles */
+            font-family: '"Playfair Display"', serif;
+            font-style: italic;
+            font-size: 1.875rem;    /* 30px, replaces Pinyon Script */
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        .text-body {          /* Standard paragraph text */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9375rem;   /* 15px */
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        .text-body-lg {       /* Slightly larger paragraph, e.g. quotes */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.0625rem;   /* 17px */
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .text-label {         /* Uppercase tracking labels, captions, meta */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;     /* 12px */
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+        .text-caption {       /* Smallest helper text */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.6875rem;   /* 11px */
+            font-weight: 400;
+            line-height: 1.4;
+        }
+        /* Container holding the side borders */
+        /* Container holding the integrated side borders */
+        .header-side-borders {
+            background-image: url('images/bunga2.jpg'), url('images/bunga2.jpg');
+            background-position: left top, right top;
+            background-repeat: repeat-y, repeat-y;
+            background-size: 85px auto; 
+        }
+
+        @media (max-width: 640px) {
+            .header-side-borders {
+                background-size: 45px auto;
+            }
+        }
+
+   
+       
+    </style>
+</head>
+<body class="font-montserrat text-neutral-700 bg-dustyrose-50 overflow-x-hidden">
+
+    <!-- Whimsical Floating Flowers (Generated by JS) -->
+    <div class="petal-container" id="petalContainer"></div>
+
+    <!-- YouTube Player Container -->
+    <div id="yt-player" style="position: fixed; width: 200px; height: 200px; pointer-events: none; opacity: 0.001; left: -9999px; top: -9999px; z-index: -9999;"></div>
+
+   
+
+    <!-- Floating Audio Control Widget -->
+    <audio id="weddingMusic" loop preload="auto">
+    <source src="music/lagukawen.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 0. E-ENVELOPE / WELCOME OVERLAY -->
+    <div id="envelopeOverlay" class="fixed inset-0 h-screen max-h-screen z-50 bg-[#e2e5e7] flex flex-col items-center justify-center p-4 transition-transform duration-1000 ease-in-out overflow-hidden select-none touch-none">  
+    
+    <div class="max-w-sm w-full max-h-full overflow-y-auto bg-white bg-[url('images/bgIyan1.png'),_url('images/bgIyan2.png')] bg-[position:top_center,_bottom_center] bg-[size:contain,_contain] bg-no-repeat flex flex-col items-center text-center justify-center relative z-10 px-6 py-6 sm:py-8 md:py-10 rounded-3xl shadow-2xl border border-neutral-100 space-y-3 sm:space-y-4 md:space-y-5">
+        
+        <div class="relative w-32 h-40 sm:w-40 sm:h-52 mx-auto drop-shadow-md flex-shrink-0">
+            <div class="absolute inset-0 border-2 border-gold/40 rounded-t-full p-1 transform scale-105"></div>
+            <div class="w-full h-full overflow-hidden rounded-t-full bg-white relative group">
+                <img src="images/iyanqila1.jpg" alt="Wan Imran &amp; Aqilah" class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-105">
+            </div>
+        </div>
+
+        <div class="space-y-0.5 sm:space-y-1 flex-shrink-0">
+            <p class="font-cookie italic text-[10px] sm:text-xs text-neutral-500 tracking-wider">Walimatulurus</p> 
+            <h2 class="font-cookie text-4xl text-plum-700 leading-tight">
+                Imran Mahdi
+            </h2>
+            <span class="font-cookie text-3xl block text-gold my-0.5">&amp;</span>
+            <h2 class="font-cookie text-4xl text-plum-700 leading-tight">
+                'Aqilah Zulhairi
+            </h2>
+        </div>
+        
+        <div class="flex justify-center items-center gap-1.5 text-plum-400 flex-shrink-0">
+            <i class="fa-solid fa-leaf text-sm sm:text-base"></i>
+            <i class="fa-solid fa-seedling text-[10px] sm:text-xs"></i>
+            <i class="fa-solid fa-circle-dot text-[6px] sm:text-[8px]"></i>
+            <i class="fa-solid fa-seedling text-[10px] sm:text-xs transform scale-x-[-1]"></i>
+            <i class="fa-solid fa-leaf text-sm sm:text-base transform scale-x-[-1]"></i>
+        </div>
+        
+        <div class="w-full space-y-1 mt-1 flex-shrink-0">
+            <p class="text-[9px] sm:text-[10px] tracking-widest text-neutral-500 uppercase">Undangan Istimewa Kepada:</p>
+            <div class="bg-white/90 backdrop-blur-sm border border-neutral-200/60 rounded-2xl py-2.5 sm:py-3 px-4 shadow-sm">
+                <span class="font-playfair text-xs sm:text-base font-semibold text-neutral-800" id="guestName">
+                    Dato' / Datin / Tuan / Puan / Sahabat Handai
+                </span>
+            </div>
+        </div>
+
+        <div class="w-full pt-1 flex-shrink-0">
+            <button onclick="openInvitation()" class="bg-plum-500 hover:bg-plum-600 text-white font-medium px-8 h-11 sm:h-12 rounded-full shadow-md hover:shadow-lg transition duration-300 w-full flex items-center justify-center gap-2 group border border-white/20">
+                <i class="fa-solid fa-envelope-open transition group-hover:translate-y-[-2px]"></i> Buka Undangan
+            </button>
+        </div>
+    </div>
+</div>
+    
+
+
+    <!-- MAIN CONTAINER (Only active/visible after opening) -->
+    <div id="mainContent" class="  opacity-0 transition-opacity duration-1000">
+
+        <!-- 1. HERO SECTION -->
+        <header class="relative min-h-screen flex flex-col justify-center items-center px-4 py-20 text-center overflow-hidden">            
+    
+            <!-- 1. SLIDESHOW BACKGROUND CONTAINER -->
+            <div class="absolute inset-0 z-0">
+                <!-- Slide 1 (Active by default) -->
+                <div class="slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000 ease-in-out" 
+                    style="background-image: url('images/iyanqila01.jpg');"></div>
+                <!-- Slide 2 -->
+                <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out" 
+                    style="background-image: url('images/iyanqila02.jpg');"></div>
+                <!-- Slide 3 (Add more if you want!) -->
+                <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out" 
+                    style="background-image: url('images/iyanqila03.jpg');"></div>
+            </div>
+
+            <!-- 2. THEME-MATCHED OVERLAY (Plum tint + blur for extreme readability) -->
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-plum-950/40 via-plum-900/50 to-plum-950/60 backdrop-blur-[2px]"></div>
+
+            <!-- 3. SIDE FLORAL BORDERS (Layered cleanly over the overlay) -->
+            <div class="header-side-borders absolute inset-0 z-20 pointer-events-none"></div>
+
+            <!-- 4. FOREGROUND CONTENT (Set to z-30 so it sits perfectly on top) -->
+            <div class="relative z-30 max-w-2xl mx-auto space-y-6 bg-black/15  p-6 sm:p-10 rounded-[2.5rem] shadow-2xl shadow-black/20 border border-white/40">            
+                <div class="flex justify-center mb-4">
+                    <img src="images/logo iyan.png" 
+                        alt="Wedding Logo" 
+                        class="h-24 w-auto object-contain md:h-32 drop-shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:drop-shadow-[0_0_20px_rgba(212,175,55,0.6)] transition-all duration-500">
+                </div>
+                
+                <h1 class="space-y-2">
+                    <span class="font-cookie text-5xl md:text-6xl text-plum-700 leading-tight block" style="color: #FFF;">Imran Mahdi</span>
+                    <span class="text-h3 block my-1 text-neutral-400 tracking-widest font-light" style="color: #804772;">&amp;</span>
+                    <span class="font-cookie text-5xl md:text-6xl text-plum-700 leading-tight block" style="color: #FFF;">'Aqilah Zulhairi</span>
+                </h1>
+
+                <p class="text-label font-bold text-neutral-700 tracking-wide style="color: #804772;"" >
+                    Sabtu, 29 Ogos 2026
+                </p>
+
+                <!-- Countdown Timer Container -->
+                <div class="pt-4">
+                    <p class="text-label text-plum-600 mb-3 font-semibold tracking-wider uppercase text-[11px]">Menghitung Hari Bahagia</p>
+                    <div id="countdown" class="flex justify-center gap-3 md:gap-4">
+                        <div class="glass-card w-16 h-20 md:w-20 md:h-24 rounded-2xl flex flex-col justify-center items-center shadow-md bg-white border border-neutral-100">
+                            <span id="days" class="text-h2 font-bold text-plum-600">52</span>
+                            <span class="text-caption uppercase tracking-wider text-neutral-500 text-[10px] mt-1">Hari</span>
+                        </div>
+                        <div class="glass-card w-16 h-20 md:w-20 md:h-24 rounded-2xl flex flex-col justify-center items-center shadow-md bg-white border border-neutral-100">
+                            <span id="hours" class="text-h2 font-bold text-plum-600">12</span>
+                            <span class="text-caption uppercase tracking-wider text-neutral-500 text-[10px] mt-1">Jam</span>
+                        </div>
+                        <div class="glass-card w-16 h-20 md:w-20 md:h-24 rounded-2xl flex flex-col justify-center items-center shadow-md bg-white border border-neutral-100">
+                            <span id="minutes" class="text-h2 font-bold text-plum-600">13</span>
+                            <span class="text-caption uppercase tracking-wider text-neutral-500 text-[10px] mt-1">Minit</span>
+                        </div>
+                        <div class="glass-card w-16 h-20 md:w-20 md:h-24 rounded-2xl flex flex-col justify-center items-center shadow-md bg-white border border-neutral-100">
+                            <span id="seconds" class="text-h2 font-bold text-plum-600">26</span>
+                            <span class="text-caption uppercase tracking-wider text-neutral-500 text-[10px] mt-1">Saat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <a href="#details" class="inline-block bg-plum-500 text-white text-body font-medium px-8 py-3 rounded-full hover:bg-plum-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition duration-300">
+                    Butiran Majlis
+                    </a>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- 3. BRIDE & GROOM PROFILE -->
+        <section id="details" class=" py-20 px-4 bg-gradient-to-b from-white to-mist-100/50 text-center relative">
+            <!-- Teks Aluan & Jemputan Rasmi -->
+            <div class="max-w-2xl mx-auto mb-16 space-y-6">
+                <span class="text-eyebrow text-plum-500 block">Walimatul Urus</span>
+                
+                <p class="text-body italic text-neutral-600 tracking-wide">
+                    Dengan Nama Allah Yang Maha Pemurah &amp; Penyayang
+                </p>
+                
+                <div class="w-12 h-0.5 bg-blossom-300 mx-auto my-4"></div>
+                 <div class="max-w-3xl mx-auto space-y-6">
+                <p class="text-body text-neutral-600 font-medium px-4">
+                    Dengan penuh kesyukuran, kami<br>
+                    <span class="text-h3 text-neutral-800 block my-2">Hj Wan Yusni bin Wan Yusoff <br> &amp; <br> Hjh Syifaii binti Mohd Bisri</span>
+                    menjemput Dato’ / Datin / Tuan / Puan / Encik / Cik ke Majlis Perkahwinan puteri kami bersama pasangannya:
+                </p>
+            </div>
+
+            <!-- Kad Gambar Bersama (Ketinggian Ditambah & Teks Ditengah) -->
+            <div class="max-w-2xl mx-auto">
+                <!-- Ditukar ke aspect-[4/3] (mobile) dan aspect-[16/9] (desktop) untuk kontainer yang lebih tinggi -->
+                <div class="relative rounded-3xl overflow-hidden shadow-lg border border-white aspect-[4/3] md:aspect-[16/9] group">
+                    
+                    <!-- Gambar Bersama -->
+                    <img src="images/yanqila.jpg" alt="Wan Imran &amp; Nurul Aqilah" class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-105">
+                    
+                    <!-- Lapisan Gelap Lalat (Symmetrical Bottom Shadow) -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    
+                    <!-- Paparan Nama: Dikecilkan (small font) & Ditengahkan (center) -->
+                    <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-center space-y-2">
+                        <h3 class="font-cookie text-2xl sm:text-3xl md:text-4xl text-plum-700 leading-tight">
+                            Imran Mahdi &amp; Nurul ‘Aqilah
+                        </h3>
+                        <div class="w-8 h-px bg-blossom-300/50 mx-auto my-1"></div>
+                        <p class="text-caption uppercase tracking-widest text-neutral-300 font-light">
+                            Pasangan Pengantin
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <hr class="border-mist-100 my-8 w-1/4 mx-auto">
+
+            <div class="text-gold text-xl">
+                    <i class="fa-solid fa-leaf"></i>
+                    <i class="fa-solid fa-heart mx-2"></i>
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                
+                <h2 class="text-eyebrow text-plum-500">Maha Suci Allah</h2>
+                
+                <p class="text-body-lg italic text-neutral-600 px-4">
+                    "Dan tiap-tiap jenis Kami ciptakan berpasangan, supaya kamu mengingati (kekuasaan dan mentauhidkan Kami) akan kebesaran Allah."
+                </p>
+                <p class="text-label font-semibold text-neutral-500">- Surah Adz-Dzariyaat: 49 -</p>
+                
+            </div>
+        </section>
+
+        <!-- 4. EVENT DETAILS & TIMELINE -->
+        <section  class=" py-20 px-4 bg-white relative">
+            <div class="max-w-4xl mx-auto">
+               <div class="text-center space-y-3 mb-12">
+                    <span class="text-eyebrow text-plum-500 block">Aturcara Majlis</span>
+                    <h2 class="text-h2 text-neutral-800">Hari &amp; Lokasi Bahagia</h2>
+                    <p class="text-label text-neutral-500">Butiran lengkap majlis untuk panduan tetamu</p>
+                </div>
+
+                <!-- Single Container Box (Centered) -->
+                <div class="max-w-4xl mx-auto glass-card p-6 md:p-10 rounded-3xl shadow-sm border border-blossom-100 relative overflow-hidden">
+                    
+                    <!-- Grid: Terpusat dengan items-center dan justify-items-center -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-items-center relative">
+                                        
+                    <!-- Garisan Pemisah Tengah (Desktop Only) -->
+                    <div class="hidden md:block absolute left-1/2 top-4 bottom-4 w-px bg-blossom-100/70 -translate-x-1/2"></div>
+
+                    <!-- BAHAGIAN 1: TARIKH & HARI -->
+                    <div class="w-full flex flex-col items-center justify-between space-y-6 text-center">
+                        <div class="space-y-4 w-full flex flex-col items-center">
+                            <div class="w-12 h-12 bg-blossom-100 text-plum-500 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="text-h3 text-neutral-800">Tarikh &amp; Hari</h3>
+                                <p class="text-h3 text-plum-500">Sabtu</p>
+                                <p class="text-body font-bold text-neutral-700">29 Ogos 2026</p>
+                                <p class="text-caption text-neutral-400">Bersamaan 16 Rabiulawal 1448H</p>
+                            </div>
+                        </div>
+
+                        <!-- Butang Hubungi (WhatsApp) -->
+                        <div class="w-full max-w-sm mx-auto px-2">
+                            <a href="https://wa.me/60104541609" target="_blank" class="w-full inline-flex items-center justify-center gap-2 border border-plum-200 bg-white hover:bg-plum-50 text-plum-600 text-label font-medium h-12 rounded-xl active:scale-[0.98] transition-all shadow-sm hover:shadow-md normal-case tracking-normal">
+                                <i class="fa-brands fa-whatsapp text-green-500 text-base"></i> sebarang pertanyaan
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Garisan Pemisah Mendatar (Mobile Only) -->
+                    <div class="block md:hidden my-2 border-t border-dashed border-blossom-200/60 w-full"></div>
+
+                    <!-- BAHAGIAN 2: LOKASI MAJLIS -->
+                    <div class="w-full flex flex-col items-center justify-between space-y-6 text-center">
+                        <div class="space-y-4 w-full flex flex-col items-center">
+                            <div class="w-12 h-12 bg-blossom-100 text-plum-500 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="text-h3 text-neutral-800">Lokasi Majlis</h3>
+                                <p class="text-h3 text-plum-500">Bukit Dinding Event Hall</p>
+                                <p class="text-body font-bold text-neutral-600 max-w-sm mx-auto pt-1">
+                                    Lot 15687 Taman Sri Keramat Au4,<br>68000 Ampang, Selangor
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Butang Navigasi (Google Maps & Waze) - Seragam dengan konsep warna tema -->
+                        <div class="grid grid-cols-2 gap-3 w-full max-w-sm mx-auto px-2">
+                            <a href="https://share.google/ni3tmQtxUt7XdiiGf" target="_blank" class="w-full inline-flex items-center justify-center gap-2 border border-plum-200 bg-white hover:bg-plum-50 text-plum-600 text-label font-medium h-12 rounded-xl active:scale-[0.98] transition-all shadow-sm hover:shadow-md normal-case tracking-normal">
+                                <i class="fa-solid fa-location-dot text-red-500"></i> Google Maps
+                            </a>
+                            <a href="https://waze.com/ul?q=Bukit%20Dinding%20Event%20Hall" target="_blank" class="w-full inline-flex items-center justify-center gap-2 border border-plum-200 bg-white hover:bg-plum-50 text-plum-600 text-label font-medium h-12 rounded-xl active:scale-[0.98] transition-all shadow-sm hover:shadow-md normal-case tracking-normal">
+                                <i class="fa-brands fa-waze text-blue-500 text-base"></i> Waze Navigation
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="mt-12 bg-blossom-100/40 rounded-3xl p-8 border border-blossom-200/60 max-w-xl mx-auto relative overflow-hidden">
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 text-blossom-300 opacity-20 pointer-events-none">
+                        <svg viewBox="0 0 100 100" fill="currentColor">
+                            <path d="M50,0 C60,20 80,20 100,50 C80,80 60,80 50,100 C40,80 20,80 0,50 C20,20 40,20 50,0" />
+                        </svg>
+                    </div>
+
+                    <h3 class="text-h3 text-center text-neutral-800 mb-8">Aturcara Majlis Keraian</h3>
+                    
+                    <div class="space-y-6 relative before:absolute before:inset-0 before:left-4 before:w-[2px] before:bg-plum-200">
+                        <div class="relative pl-10">
+                            <div class="absolute left-2.5 top-1.5 w-3.5 h-3.5 bg-plum-500 border-2 border-white rounded-full"></div>
+                            <p class="text-label text-plum-500 normal-case tracking-normal">11:00 AM</p>
+                            <p class="text-body font-semibold text-neutral-800">Ketibaan Para Jemputan</p>
+                            <p class="text-caption text-neutral-500">Tetamu dialu-alukan masuk ke dewan utama</p>
+                        </div>
+
+                        <div class="relative pl-10">
+                            <div class="absolute left-2.5 top-1.5 w-3.5 h-3.5 bg-plum-500 border-2 border-white rounded-full"></div>
+                            <p class="text-label text-plum-500 normal-case tracking-normal">12:30 PM</p>
+                            <p class="text-body font-semibold text-neutral-800">Ketibaan Pengantin</p>
+                            <p class="text-caption text-neutral-500">Perarakan masuk raja sehari </p>
+                        </div>
+
+                        <div class="relative pl-10">
+                            <div class="absolute left-2.5 top-1.5 w-3.5 h-3.5 bg-plum-500 border-2 border-white rounded-full"></div>
+                            <p class="text-label text-plum-500 normal-case tracking-normal">01:00 PM</p>
+                            <p class="text-body font-semibold text-neutral-800">Jamuan Makan</p>
+                            <p class="text-caption text-neutral-500">Santapan diraikan bersama keluarga tersayang</p>
+                        </div>
+
+                        <div class="relative pl-10">
+                            <div class="absolute left-2.5 top-1.5 w-3.5 h-3.5 bg-plum-500 border-2 border-white rounded-full"></div>
+                            <p class="text-label text-plum-500 normal-case tracking-normal">04:00 PM</p>
+                            <p class="text-body font-semibold text-neutral-800">Majlis Bersurai</p>
+                            <p class="text-caption text-neutral-500">Terima kasih atas kehadiran & doa sekalian tetamu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. RSVP SECTION -->
+        <section id="rsvp" class="py-20 px-4 bg-blossom-100/30 relative">
+            <div class="max-w-xl mx-auto">
+                <div class="text-center space-y-3 mb-8">
+                    <span class="text-eyebrow text-plum-500 block">Sahkan Kehadiran</span>
+                    <h2 class="text-h2 text-neutral-800">Maklumbalas RSVP</h2>
+                    <p class="text-caption text-neutral-500 tracking-wider">Mohon maklumbalas sebelum <b>20 Ogos 2026</b></p>
+                </div>
+
+                <form id="rsvpForm" onsubmit="submitRSVP(event)" class="bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-md border border-blossom-100 space-y-6 relative">
+                    <div class="absolute -bottom-4 -left-4 w-12 h-12 text-blossom-200">
+                        <svg viewBox="0 0 100 100" fill="currentColor">
+                            <circle cx="50" cy="50" r="20" />
+                            <circle cx="50" cy="20" r="15" />
+                            <circle cx="50" cy="80" r="15" />
+                            <circle cx="20" cy="50" r="15" />
+                            <circle cx="80" cy="50" r="15" />
+                        </svg>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-label text-neutral-600">Nama Penuh Anda</label>
+                        <input type="text" id="rsvpName" required class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-plum-400 focus:ring-1 focus:ring-plum-400 outline-none text-body transition" placeholder="Sila masukkan nama penuh">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-label text-neutral-600 block">Status Kehadiran</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <label class="flex items-center justify-center gap-2 border border-neutral-200 rounded-xl py-3 cursor-pointer hover:bg-blossom-100/50 transition">
+                                <input type="radio" name="presence" value="Hadir" checked class="accent-plum-500">
+                                <span class="text-body font-medium text-neutral-700">Hadir</span>
+                            </label>
+                            <label class="flex items-center justify-center gap-2 border border-neutral-200 rounded-xl py-3 cursor-pointer hover:bg-neutral-50 transition">
+                                <input type="radio" name="presence" value="Tidak" class="accent-plum-500">
+                                <span class="text-body font-medium text-neutral-700">Tidak Hadir</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2" id="paxGroup">
+                        <label class="text-label text-neutral-600 block">Bilangan Tetamu (Pax)</label>
+                        <select id="rsvpPax" class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-plum-400 focus:ring-1 focus:ring-plum-400 outline-none text-body transition bg-white">
+                            <option value="1">1 Orang</option>
+                            <option value="2">2 Orang</option>
+                            <option value="3">3 Orang</option>
+                            <option value="4">4 Orang</option>
+                            <option value="5">5 Orang</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full bg-plum-500 hover:bg-plum-600 text-white text-body font-medium py-3.5 rounded-xl shadow-md transition duration-300">
+                        Hantar Pengesahan Kehadiran
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 6. DIGITAL GUESTBOOK (UCAPAN) -->
+        <section class="py-20 px-4 bg-white">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center space-y-3 mb-8">
+                    <span class="text-eyebrow text-plum-500 block">Titipan Doa</span>
+                    <h2 class="text-h2 text-neutral-800">Ucapan Tahniah</h2>
+                    <p class="text-caption text-neutral-500 tracking-wider">Hantarkan ucapan indah anda buat pengantin</p>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Wish Form -->
+                    <form id="wishForm" onsubmit="submitWish(event)" class="bg-blossom-100/40 p-6 rounded-3xl border border-blossom-200/60 space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" id="wishName" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-plum-400 focus:ring-1 focus:ring-plum-400 outline-none text-body transition bg-white">
+                            <input type="text" id="wishRelation" placeholder="Hubungan (cth: Rakan Sekolah)" class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-plum-400 focus:ring-1 focus:ring-plum-400 outline-none text-body transition bg-white">
+                        </div>
+                        <textarea id="wishContent" required rows="3" placeholder="Tuliskan ucapan dan doa terbaik buat pengantin..." class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-plum-400 focus:ring-1 focus:ring-plum-400 outline-none text-body transition bg-white resize-none"></textarea>
+                        
+                        <button type="submit" class="w-full bg-plum-500 hover:bg-plum-600 text-white text-body font-medium py-3 rounded-xl shadow-sm transition">
+                            Hantar Ucapan
+                        </button>
+                    </form>
+
+                    <!-- Wishes Display Area -->
+                    <div id="wishesDisplay" class="max-h-96 overflow-y-auto space-y-4 pr-2 style-scrollbar">
+                        <!-- Wishes will be generated here by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-neutral-100">
+                <div class="text-center space-y-2 mb-6">
+            
+                    <span class="text-eyebrow text-plum-500 block">Galeri Foto</span>
+                   <p class="text-caption text-neutral-500 tracking-wider">Momen Indah Pengantin</p>
+                </div>
+
+                <div id="photoCarousel" class="relative w-full overflow-hidden rounded-2xl shadow-md bg-neutral-50 group">
+                    
+                    <div id="carouselTrack" class="flex transition-transform duration-700 ease-in-out w-full h-64 sm:h-80">
+                        
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila2.jpg" alt="Foto Pengantin 1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila3.jpg" alt="Foto Pengantin 2" class="w-full h-full object-cover ">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila4.jpg" alt="Foto Pengantin 3" class="w-full h-full object-cover ">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila5.jpg" alt="Foto Pengantin 4" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila6.jpg" alt="Foto Pengantin 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila7.jpg" alt="Foto Pengantin 3" class="w-full h-full object-cover ">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila8.jpg" alt="Foto Pengantin 4" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila9.jpg" alt="Foto Pengantin 2" class="w-full h-full object-cover ">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila10.jpg" alt="Foto Pengantin 3" class="w-full h-full object-cover ">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila11.jpg" alt="Foto Pengantin 4" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila12.jpg" alt="Foto Pengantin 2" class="w-full h-full object-cover ">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila13.jpg" alt="Foto Pengantin 3" class="w-full h-full object-cover ">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila14.jpg" alt="Foto Pengantin 4" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila15.jpg" alt="Foto Pengantin 2" class="w-full h-full object-cover ">
+                        </div>
+                        <div class="w-full h-full flex-shrink-0">
+                            <img src="images/iyanqila16.jpg" alt="Foto Pengantin 3" class="w-full h-full object-cover ">
+                        </div>
+                       
+                        
+                    </div>
+
+                    <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+                        <button class="w-2 h-2 rounded-full bg-white/50 transition-all duration-300" onclick="goToSlide(0)"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/50 transition-all duration-300" onclick="goToSlide(1)"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/50 transition-all duration-300" onclick="goToSlide(2)"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/50 transition-all duration-300" onclick="goToSlide(3)"></button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- FOOTER & BRANDING -->
+        <footer class="bg-neutral-900 text-white py-12 px-4 text-center">
+            <div class="max-w-md mx-auto space-y-4">
+                <span class="font-cookie text-4xl text-plum-400 leading-tight block">Imran &amp; Aqilah</span>
+                <p class="text-caption uppercase tracking-widest text-neutral-400 text-xs">#ImranAqilahSatuJiwa</p>
+                <p class="text-caption text-neutral-500 text-sm">Terima kasih atas segala ucapan dan doa restu sekalian hadirin budiman.</p>
+                
+                <div class="text-neutral-600 text-caption pt-4 space-y-1">
+                    <div>Rebuilt with Love &amp; Care • by Elhadiy Solution</div>
+                    
+                    <!-- Short & Simple CTA -->
+                    <div class="pt-2 text-xs">
+                        <a href="https://wa.me/601163400466?text=Hi%20Elhadiy%20Solution,%20I%20am%20interested%20to%20make%20an%20ecard%20for%20my%20event!" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="group inline-flex items-center gap-1.5 text-plum-400 hover:text-plum-300 transition-colors duration-200">
+                            <span class="underline">Interested to make an ecard for your events?</span>
+                            <!-- Lightweight SVG Arrow that slides right slightly on hover -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- CUSTOM FEEDBACK POP-UP MODAL -->
+    <div id="feedbackModal" class="fixed inset-0 z-50 bg-black/50 hidden flex items-center justify-center p-4">
+        <div class="max-w-sm w-full bg-white rounded-3xl p-6 text-center shadow-2xl relative border-t-4 border-plum-500 animate-[bounce_0.5s_ease-out_1]">
+            <div class="w-16 h-16 bg-blossom-100 text-plum-500 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
+                <i class="fa-solid fa-heart-circle-check"></i>
+            </div>
+            <h3 id="modalTitle" class="text-h3 text-neutral-800 mb-2">Terima Kasih</h3>
+            <p id="modalMsg" class="text-body text-neutral-600 mb-6">Mesej maklumbalas anda telah berjaya disimpan.</p>
+            <button onclick="closeModal()" class="w-full bg-plum-500 hover:bg-plum-600 text-white text-body font-medium py-2.5 rounded-xl transition">
+                Tutup
+            </button>
+        </div>
+    </div>
+    <!-- Music Button -->
+    <button id="musicToggleBtn"
+        onclick="toggleMusic()"
+        class="hidden fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-plum-500 text-white shadow-xl hover:bg-plum-600 active:scale-95 transition-all flex items-center justify-center">
+
+        <i id="musicIcon" class="fas fa-music text-lg"></i>
+
+    </button>
+
+    <!-- --- JAVASCRIPT --- -->
+    <script>
+    
+
+        // 1. Generate Floating Flowers and Petals (Whimsical Botanical Theme)
+        function createSnowParticles() {
+            const container = document.getElementById('petalContainer');
+            if (!container) return;
+            
+            // Jumlah kepingan salji (Ditingkatkan untuk kesan "snowy" yang lebih menyeluruh)
+            const numParticles = 50; 
+
+            // SVG berbentuk kepingan salji / dot bokeh lembut mengikut kod warna tema (Plum, Blossom, Gold, White)
+            const snowSVGs = [
+                // Blossom Pink Particle
+                `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="45" fill="#fbcfe8" opacity="0.6"/></svg>`, 
+                // Plum / Dusty Rose Particle
+                `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="45" fill="#a21caf" opacity="0.4"/></svg>`, 
+                // Gold Particle
+                `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="45" fill="#d4af37" opacity="0.5"/></svg>`, 
+                // Pure Snowy White (Standard Snow)
+                `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="45" fill="#ffffff" opacity="0.7"/></svg>`,
+                // Soft Glow Sparkle
+                `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50,0 L53,47 L100,50 L53,53 L50,100 L47,53 L0,50 L47,47 Z" fill="#ffffff" opacity="0.6"/></svg>`
+            ];
+
+            for (let i = 0; i < numParticles; i++) {
+                const element = document.createElement('div');
+                // Jika perlu, anda boleh tukar nama kelas CSS jika mahu (cth: 'snow-particle')
+                element.classList.add('floating-flower'); 
+                
+                // Saiz kepingan salji (Campuran saiz kecil 6px hingga besar 18px untuk kesan kedalaman/depth)
+                const size = Math.random() * 12 + 6; 
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                
+                // Memilih corak warna secara rawak
+                const randomSVG = snowSVGs[Math.floor(Math.random() * snowSVGs.length)];
+                element.innerHTML = randomSVG;
+                
+                // Kedudukan posisi rawak
+                element.style.left = `${Math.random() * 100}vw`;
+                element.style.animationDelay = `${Math.random() * 8}s`;
+                
+                // Kelajuan jatuh (Salji jatuh sedikit lebih laju & konsisten berbanding kelopak bunga biasa)
+                element.style.animationDuration = `${Math.random() * 6 + 6}s`; // Antara 6s hingga 12s
+                
+                // Menambah sedikit kesan blur rawak untuk estetik bokeh premium
+                if (Math.random() > 0.5) {
+                    element.style.filter = 'blur(1px)';
+                }
+                
+                container.appendChild(element);
+            }
+        }
+        createSnowParticles();
+
+        // 2. Guest Name Extraction from URL Parameters (e.g. index.html?to=Dato+Ahmad)
+        function setGuestName() {
+            const params = new URLSearchParams(window.location.search);
+            const guest = params.get('to');
+            if (guest) {
+                document.getElementById('guestName').innerText = decodeURIComponent(guest);
+            }
+        }
+        setGuestName();
+
+        // 3. Open Envelope & Autoplay Logic with YouTube Player Integration
+        const musicToggleBtn = document.getElementById('musicToggleBtn');
+        const musicIcon = document.getElementById('musicIcon');
+        let musicIsPlaying = false;
+
+        function openInvitation() {
+            const envelope = document.getElementById('envelopeOverlay');
+            const mainContent = document.getElementById('mainContent');
+            const music = document.getElementById('weddingMusic');
+            
+            envelope.classList.add('envelope-open');
+            mainContent.classList.remove('opacity-0');
+            mainContent.classList.add('opacity-100');
+            musicToggleBtn.classList.remove('hidden');
+
+            music.currentTime = 25;
+
+            music.play()
+                .then(() => {
+                    musicIsPlaying = true;
+                    musicIcon.classList.add('spinning');
+                })
+                .catch(err => {
+                    console.log('Autoplay blocked:', err);
+                });
+
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+
+                envelope.classList.add('hidden');
+            }, 1200);
+        }
+
+        function toggleMusic() {
+            const music = document.getElementById('weddingMusic');
+
+            if (music.paused) {
+
+                music.play();
+                musicIsPlaying = true;
+
+                musicIcon.classList.add('spinning');
+
+            } else {
+
+                music.pause();
+                musicIsPlaying = false;
+
+                musicIcon.classList.remove('spinning');
+            }
+        }
+
+        // 4. Countdown Timer logic
+        const weddingDate = new Date("Aug 29, 2026 11:00:00").getTime();
+
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+
+            if (difference < 0) {
+                clearInterval(timer);
+                document.getElementById('countdown').innerHTML = `<p class="text-h3 text-dustyrose-500 font-bold">Selamat Hari Bahagia!</p>`;
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }, 1000);
+
+        // 5. Custom Modal controls
+        // Fungsi sedia ada anda untuk membuka modal
+        function openModal(title, message) {
+            const modal = document.getElementById('feedbackModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMsg = document.getElementById('modalMsg');
+            
+            if (modal && modalTitle && modalMsg) {
+                modalTitle.innerText = title;
+                modalMsg.innerText = message;
+                modal.classList.remove('hidden');
+            }
+        }
+
+        // FUNGSI INI YANG DIKEMASKINI: Menutup modal dan terus skrol ke atas
+        function closeModal() {
+            const modal = document.getElementById('feedbackModal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+            
+            // Skrol secara lancar terus ke bahagian paling atas halaman selepas modal ditutup
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        const rsvpPresenceRadio = document.getElementsByName('presence');
+        const paxGroup = document.getElementById('paxGroup');
+
+        rsvpPresenceRadio.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'Hadir') {
+                    paxGroup.classList.remove('hidden');
+                } else {
+                    paxGroup.classList.add('hidden');
+                }
+            });
+        });
+
+        function submitRSVP(event) {
+            event.preventDefault();
+            const name = document.getElementById("rsvpName").value;
+            
+            const presenceElement = document.querySelector('input[name="presence"]:checked');
+            if (!presenceElement) {
+                alert("Sila pilih status kehadiran anda.");
+                return;
+            }
+            const presence = presenceElement.value;
+            const pax = presence === "Hadir" ? (document.getElementById("rsvpPax").value || 1) : 0;
+
+            const payload = {
+                action: "rsvp",
+                name: name,
+                presence: presence,
+                pax: pax
+            };
+
+            // Cari butang submit untuk elakkan double-click tetamu
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            if (submitBtn) submitBtn.disabled = true;
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors", // <--- TAMBAH INI untuk bypass sekatan CORS Google
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+            // Menggunakan pemulangan kosong kerana 'no-cors' tidak membenarkan pembacaan respon tubuh
+            .then(() => {
+                if (presence === "Hadir") {
+                    openModal(
+                        "Terima Kasih!",
+                        `Pihak pengantin sangat berbesar hati menerima pengesahan kehadiran daripada ${name} seramai ${pax} orang tetamu.`
+                    );
+                } else {
+                    openModal(
+                        "Terima Kasih!",
+                        `Terima kasih atas maklumbalas anda, ${name}.`
+                    );
+                }
+                
+                // Reset borang
+                document.getElementById("rsvpForm").reset();
+                if (paxGroup) paxGroup.classList.add("hidden");
+            })
+            .catch(err => {
+                console.error(err);
+                alert("Failed to save RSVP.");
+            })
+            .finally(() => {
+                if (submitBtn) submitBtn.disabled = false;
+            });
+        }
+
+        // 6. Guestbook (Titipan Doa) Logic - Google Sheets backend (live, shared across all guests)
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxQy1_O7LMpJY4a8aWBXy4iRWX2OdOgvFRtKtB6xlMPU7DyXaiqTM66xcBD38d3NdYZ7g/exec';
+
+        function createWishCard(name, relation, content, isNew = false) {
+            const animationClass = isNew ? 'wish-card-animate' : '';
+            const relationBadge = relation && relation !== '-' 
+                ? `<span class="text-caption bg-dustyrose-100 text-dustyrose-600 px-2 py-0.5 rounded-full font-medium break-all max-w-[120px] truncate">${relation}</span>` 
+                : '';
+
+            return `
+                <div class="wish-card ${animationClass} bg-neutral-50 p-4 rounded-2xl border border-neutral-100 space-y-1 transition duration-300 hover:shadow-sm">
+                    <div class="flex items-center justify-between gap-2">
+                        <h4 class="text-body font-semibold text-neutral-800 truncate">${name}</h4>
+                        ${relationBadge}
+                    </div>
+                    <p class="text-caption text-neutral-600 leading-relaxed whitespace-pre-line">${content}</p>
+                </div>
+            `;
+        }
+
+        function loadLatestWishes() {
+            const wishesDisplay = document.getElementById('wishesDisplay');
+            
+            fetch(GOOGLE_SCRIPT_URL)
+                .then(response => response.json())
+                .then(data => {
+                    if (Array.isArray(data)) {
+                        wishesDisplay.innerHTML = '';
+                        
+                        if (data.length === 0) {
+                            wishesDisplay.innerHTML = `<p class="text-caption text-neutral-400 text-center py-4">Belum ada ucapan lagi. Jadilah yang pertama!</p>`;
+                            return;
+                        }
+
+                        data.forEach(wish => {
+                            const cardHTML = createWishCard(wish.name, wish.relation, wish.content, false);
+                            wishesDisplay.insertAdjacentHTML('beforeend', cardHTML);
+                        });
+                    }
+                })
+                .catch(error => console.error('Gagal mengambil data ucapan:', error));
+        }
+
+        function submitWish(event) {
+            event.preventDefault();
+
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Menghantar...';
+            submitBtn.disabled = true;
+
+            const name = document.getElementById('wishName').value;
+            const relation = document.getElementById('wishRelation').value || '-';
+            const content = document.getElementById('wishContent').value;
+
+            const payload = {
+                action: 'wish',
+                name: name,
+                relation: relation,
+                content: content
+            };
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                const wishesDisplay = document.getElementById('wishesDisplay');
+                
+                if(wishesDisplay.querySelector('.text-center')) {
+                    wishesDisplay.innerHTML = '';
+                }
+
+                const newCardHTML = createWishCard(name, relation, content, true);
+                wishesDisplay.insertAdjacentHTML('afterbegin', newCardHTML);
+                
+                document.getElementById('wishForm').reset();
+
+                const currentCards = wishesDisplay.querySelectorAll('.wish-card');
+                if (currentCards.length > 5) {
+                    currentCards[currentCards.length - 1].remove();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Maaf, ralat berlaku semasa menghantar ucapan.');
+            })
+            .finally(() => {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadLatestWishes();
+            setInterval(loadLatestWishes, 10000);
+        });
+
+        const track = document.getElementById('carouselTrack');
+        const carousel = document.getElementById('photoCarousel');
+        const slides = track.children;
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+        let carouselInterval;
+        
+        // Masa pertukaran imej automatik (2000ms = 2 saat)
+        const slideDuration = 2000; 
+
+        function updateCarousel() {
+            // Menggerakkan track imej berdasarkan peratus indeks semasa
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Mengemaskini visual titik penunjuk (indicators)
+            const dots = carousel.querySelectorAll('.absolute.bottom-4 button');
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.remove('bg-white/50', 'w-2');
+                    dot.classList.add('bg-white', 'w-4'); // Dot aktif menjadi lebih lebar dan cerah
+                } else {
+                    dot.classList.remove('bg-white', 'w-4');
+                    dot.classList.add('bg-white/50', 'w-2');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        function startAutoSlide() {
+            // Memulakan fungsi pusingan automatik jika belum berjalan
+            if (!carouselInterval) {
+                carouselInterval = setInterval(nextSlide, slideDuration);
+            }
+        }
+
+        function stopAutoSlide() {
+            // Menghentikan pusingan pemasa
+            clearInterval(carouselInterval);
+            carouselInterval = null;
+        }
+
+        // Event Listeners untuk mengawal fungsi "Stop on Hover"
+        carousel.addEventListener('mouseenter', stopAutoSlide);
+        carousel.addEventListener('mouseleave', startAutoSlide);
+        
+        // Sokongan untuk peranti skrin sentuh (Mobile friendly touch)
+        carousel.addEventListener('touchstart', stopAutoSlide);
+        carousel.addEventListener('touchend', startAutoSlide);
+
+        // Jalankan karusel sebaik sahaja skrip dimuatkan
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCarousel();
+            startAutoSlide();
+        });
+
+        // 7. Simple Fade-In/Out Slideshow for header section
+        document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".slide");
+        let currentSlide = 0;
+
+        function nextSlide() {
+            // Fade out current slide
+            slides[currentSlide].style.opacity = "0";
+            
+            // Move to next slide index
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            // Fade in next slide
+            slides[currentSlide].style.opacity = "1";
+        }
+
+        // Changed to 3000ms for a 3-second auto-slide interval
+        setInterval(nextSlide, 3000);
+    });
+    </script>
+</body>
+</html>
