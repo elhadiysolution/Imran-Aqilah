@@ -115,16 +115,23 @@
         }
 
         /* Floral card background - shared theme for every card container.
-           Sits above the plain page background so cards read as distinct
-           "floating" panels, framed with the site's floral art. */
+           A translucent frosted panel so cards read as distinct "floating"
+           surfaces above the page-wide floral wallpaper (see #mainContent). */
         .floral-card {
-            background-color: rgba(255, 255, 255, 0.94);
-            background-image: url('images/background.png');
-            background-position: top center;
-            background-size: contain;
-            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Main page floral wallpaper - sits behind every section. Anchored to
+           the top of the page; fades into the matching cream tone below so
+           long scrolling sections don't hit a hard edge. */
+        #mainContent {
+            background-color: #f7f2ea;
+            background-image: url('images/background.png');
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
         }
 
         /* Whimsical Swaying Animation for Left/Right Vines */
@@ -292,7 +299,7 @@
     <!-- 0. E-ENVELOPE / WELCOME OVERLAY -->
     <div id="envelopeOverlay" class="fixed inset-0 h-screen max-h-screen z-50 bg-[#e2e5e7] flex flex-col items-center justify-center p-4 transition-transform duration-1000 ease-in-out overflow-hidden select-none touch-none">  
     
-    <div class="max-w-sm w-full max-h-full overflow-y-auto floral-card flex flex-col items-center text-center justify-center relative z-10 px-6 py-6 sm:py-8 md:py-10 rounded-3xl shadow-2xl border border-neutral-100 space-y-3 sm:space-y-4 md:space-y-5">
+    <div class="max-w-sm w-full max-h-full overflow-y-auto bg-white bg-[url('images/bgIyan1.png'),_url('images/bgIyan2.png')] bg-[position:top_center,_bottom_center] bg-[size:contain,_contain] bg-no-repeat flex flex-col items-center text-center justify-center relative z-10 px-6 py-6 sm:py-8 md:py-10 rounded-3xl shadow-2xl border border-neutral-100 space-y-3 sm:space-y-4 md:space-y-5">
         
         <div class="relative w-32 h-40 sm:w-40 sm:h-52 mx-auto drop-shadow-md flex-shrink-0">
             <div class="absolute inset-0 border-2 border-gold/40 rounded-t-full p-1 transform scale-105"></div>
@@ -433,7 +440,7 @@
                 </p>
             </div>
 
-            <!-- Kad Kontainer: Gambar Bersama & Kalimah Suci (mengikut tema floral-card seragam laman) -->
+            <!-- Kad Kontainer: Gambar Bersama & Kalimah Suci (mengikut tema glass-card seragam laman) -->
             <div class="max-w-2xl mx-auto floral-card p-5 md:p-8 rounded-3xl shadow-sm border border-blossom-100 relative overflow-hidden space-y-8">
 
                 <!-- Kad Gambar Bersama (Ketinggian Ditambah & Teks Ditengah) -->
@@ -488,7 +495,7 @@
                 </div>
 
                 <!-- Single Container Box (Centered) -->
-                <div class="max-w-4xl mx-auto floral-card p-6 md:p-10 rounded-3xl shadow-sm border border-blossom-100 relative overflow-hidden">
+                <div class="max-w-4xl mx-auto glass-card p-6 md:p-10 rounded-3xl shadow-sm border border-blossom-100 relative overflow-hidden">
                     
                     <!-- Grid: Terpusat dengan items-center dan justify-items-center -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-items-center relative">
@@ -548,9 +555,6 @@
                                 <i class="fa-brands fa-whatsapp text-green-500 text-base"></i> Pertanyaan
                             </a>
                         </div>
-                        <button type="button" onclick="addToCalendar()" class="text-caption text-plum-400 hover:text-plum-600 underline underline-offset-2 transition-colors">
-                            <i class="fa-solid fa-bell mr-1"></i>Muat turun .ics (dengan peringatan 5 hari awal)
-                        </button>
                     </div>
                     
 
@@ -609,7 +613,7 @@
                     <p class="text-caption text-neutral-500 tracking-wider">Mohon maklum balas sebelum <b>15 Ogos 2026</b></p>
                 </div>
 
-                <form id="rsvpForm" onsubmit="submitRSVP(event)" class="floral-card p-8 rounded-3xl shadow-md border border-blossom-100 space-y-6 relative">
+                <form id="rsvpForm" onsubmit="submitRSVP(event)" class="bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-md border border-blossom-100 space-y-6 relative">
                     <div class="absolute -bottom-4 -left-4 w-12 h-12 text-blossom-200">
                         <svg viewBox="0 0 100 100" fill="currentColor">
                             <circle cx="50" cy="50" r="20" />
@@ -668,7 +672,7 @@
 
                 <div class="space-y-8">
                     <!-- Wish Form -->
-                    <form id="wishForm" onsubmit="submitWish(event)" class="floral-card p-6 rounded-3xl border border-blossom-200/60 space-y-4">
+                    <form id="wishForm" onsubmit="submitWish(event)" class="bg-blossom-100/40 p-6 rounded-3xl border border-blossom-200/60 space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <input type="text" id="wishName" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-plum-400 focus:ring-1 focus:ring-plum-400 outline-none text-body transition bg-white">
                             <input type="text" id="wishRelation" placeholder="Hubungan (cth: Rakan Sekolah)" class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-plum-400 focus:ring-1 focus:ring-plum-400 outline-none text-body transition bg-white">
@@ -928,45 +932,6 @@
 
                 musicIcon.classList.remove('spinning');
             }
-        }
-
-        // Muat turun fail .ics (Outlook/Apple Calendar/dll) dengan peringatan 5 hari awal terbina-dalam.
-        // Nota: pautan "Google Kalendar" guna Google's quick-add URL sebaliknya, kerana Google tidak
-        // membenarkan peringatan tersuai ditetapkan melalui pautan awam — pengguna Google Calendar
-        // akan dapat notifikasi lalai (biasanya 30 minit) melainkan mereka tambah sendiri secara manual.
-        function addToCalendar() {
-            const toICSDate = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-
-            const icsLines = [
-                'BEGIN:VCALENDAR',
-                'VERSION:2.0',
-                'PRODID:-//Imran Mahdi & Nurul Aqilah//Walimatulurus//MS',
-                'CALSCALE:GREGORIAN',
-                'BEGIN:VEVENT',
-                'UID:' + Date.now() + '@imranaqilah-walimatulurus',
-                'DTSTAMP:' + toICSDate(new Date()),
-                'DTSTART:20260829T110000',
-                'DTEND:20260829T160000',
-                'SUMMARY:Walimatulurus Imran Mahdi & Nurul \'Aqilah',
-                'DESCRIPTION:Majlis perkahwinan Imran Mahdi & Nurul \'Aqilah. Jom hadir dan raikan bersama kami!',
-                'LOCATION:Bukit Dinding Event Hall\\, Lot 15687 Taman Sri Keramat Au4\\, 68000 Ampang\\, Selangor',
-                'BEGIN:VALARM',
-                'ACTION:DISPLAY',
-                'DESCRIPTION:Peringatan: Majlis Walimatulurus 5 hari lagi',
-                'TRIGGER:-P5D',
-                'END:VALARM',
-                'END:VEVENT',
-                'END:VCALENDAR'
-            ];
-
-            const blob = new Blob([icsLines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'Walimatulurus-ImranAqilah.ics';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(link.href);
         }
 
         // 4. Countdown Timer logic
