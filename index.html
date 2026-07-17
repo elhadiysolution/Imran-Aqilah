@@ -146,15 +146,6 @@
             background-size: 100% auto;
         }
 
-        /* Ucapan / wishes section backdrop */
-        .wish-section-bg {
-            background-color: #f7f2ea;
-            background-image: url('images/background.png');
-            background-position: top center;
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-        }
-
         /* Whimsical Swaying Animation for Left/Right Vines */
         @keyframes swayLeft {
             0%, 100% { transform: rotate(0deg) scale(1); }
@@ -683,7 +674,7 @@
         </section>
 
         <!-- 6. DIGITAL GUESTBOOK (UCAPAN) -->
-        <section class="py-20 px-4 wish-section-bg">
+        <section class="py-20 px-4 bg-white">
             <div class="max-w-2xl mx-auto">
                 <div class="text-center space-y-3 mb-8">
                     <span class="text-eyebrow text-plum-500 block">Titipan Doa</span>
@@ -693,7 +684,7 @@
 
                 <div class="space-y-8">
                     <!-- Wish Form -->
-                    <form id="wishForm" onsubmit="submitWish(event)" class="bg-blossom-100/40 p-6 rounded-3xl border border-blossom-200/60 space-y-4">
+                    <form id="wishForm" onsubmit="submitWish(event)" class="floral-card p-6 rounded-3xl border border-blossom-200/60 space-y-4 overflow-hidden relative">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <input type="text" id="wishName" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-plum-400 focus:ring-1 focus:ring-plum-400 outline-none text-body transition bg-white">
                             <input type="text" id="wishRelation" placeholder="Hubungan (cth: Rakan Sekolah)" class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-plum-400 focus:ring-1 focus:ring-plum-400 outline-none text-body transition bg-white">
@@ -706,8 +697,10 @@
                     </form>
 
                     <!-- Wishes Display Area -->
-                    <div id="wishesDisplay" class="max-h-96 overflow-y-auto space-y-4 pr-2 style-scrollbar">
-                        <!-- Wishes will be generated here by JS -->
+                    <div class="floral-card rounded-3xl border border-blossom-200/60 p-4 overflow-hidden relative">
+                        <div id="wishesDisplay" class="max-h-96 overflow-y-auto space-y-4 pr-2 style-scrollbar">
+                            <!-- Wishes will be generated here by JS -->
+                        </div>
                     </div>
                 </div>
             </div>
