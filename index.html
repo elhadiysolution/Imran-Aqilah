@@ -115,12 +115,15 @@
         }
 
         /* Floral card background - shared theme for every card container.
-           A translucent frosted panel so cards read as distinct "floating"
-           surfaces above the page-wide floral wallpaper (see #mainContent). */
+           Each card carries its own copy of the floral art, anchored to its
+           own top edge; overflow-hidden + rounded corners on the card crop
+           it cleanly instead of stretching it to fit. */
         .floral-card {
-            background-color: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background-color: #f7f2ea;
+            background-image: url('images/background.png');
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
         }
 
         /* Main page floral wallpaper - sits behind every section. Anchored to
@@ -495,7 +498,7 @@
                 </div>
 
                 <!-- Single Container Box (Centered) -->
-                <div class="max-w-4xl mx-auto glass-card p-6 md:p-10 rounded-3xl shadow-sm border border-blossom-100 relative overflow-hidden">
+                <div class="max-w-4xl mx-auto floral-card p-6 md:p-10 rounded-3xl shadow-sm border border-blossom-100 relative overflow-hidden">
                     
                     <!-- Grid: Terpusat dengan items-center dan justify-items-center -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-items-center relative">
@@ -562,7 +565,7 @@
                 </div>
 
                 <!-- Timeline -->
-                <div class="mt-12 bg-blossom-100/40 rounded-3xl p-8 border border-blossom-200/60 max-w-xl mx-auto relative overflow-hidden">
+                <div class="mt-12 floral-card rounded-3xl p-8 border border-blossom-200/60 max-w-xl mx-auto relative overflow-hidden">
                     <div class="absolute -bottom-10 -right-10 w-32 h-32 text-blossom-300 opacity-20 pointer-events-none">
                         <svg viewBox="0 0 100 100" fill="currentColor">
                             <path d="M50,0 C60,20 80,20 100,50 C80,80 60,80 50,100 C40,80 20,80 0,50 C20,20 40,20 50,0" />
