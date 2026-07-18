@@ -830,6 +830,14 @@
 
     </button>
 
+    <!-- Floating RSVP Button -->
+    <a id="rsvpFloatBtn" href="#rsvp"
+        class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-plum-500 text-white shadow-xl hover:bg-plum-600 active:scale-95 transition-all rounded-full px-6 h-14 flex items-center gap-2 text-body font-medium whitespace-nowrap">
+
+        <i class="fa-solid fa-heart"></i> RSVP
+
+    </a>
+
     <!-- --- JAVASCRIPT --- -->
     <script>
     
@@ -911,6 +919,7 @@
             mainContent.classList.remove('opacity-0');
             mainContent.classList.add('opacity-100');
             musicToggleBtn.classList.remove('hidden');
+            document.getElementById('rsvpFloatBtn').classList.remove('hidden');
 
             music.currentTime = 10;
 
