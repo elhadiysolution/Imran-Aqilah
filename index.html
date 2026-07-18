@@ -1036,18 +1036,11 @@
             }
         }
 
-        // FUNGSI INI YANG DIKEMASKINI: Menutup modal dan terus skrol ke atas
         function closeModal() {
             const modal = document.getElementById('feedbackModal');
             if (modal) {
                 modal.classList.add('hidden');
             }
-            
-            // Skrol secara lancar terus ke bahagian paling atas halaman selepas modal ditutup
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
         }
 
         const rsvpPresenceRadio = document.getElementsByName('presence');
